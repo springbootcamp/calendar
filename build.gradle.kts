@@ -8,9 +8,9 @@ buildscript {
 	}
 
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M6")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M7")
 		classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.1")
-    classpath("org.springframework:springloaded:1.2.6.RELEASE")
+    classpath("org.springframework:springloaded:1.2.8.RELEASE")
 	}
 }
 
@@ -28,11 +28,12 @@ apply {
 //}
 
 plugins {
-	val kotlinVersion = "1.1.51"
+	val kotlinVersion = "1.2.0"
 	id("org.jetbrains.kotlin.jvm") version kotlinVersion
 	id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion
 	id("org.jetbrains.kotlin.plugin.jpa") version kotlinVersion
 	id("io.spring.dependency-management") version "1.0.3.RELEASE"
+
 }
 
 version = "0.1.0-SNAPSHOT"
@@ -53,11 +54,15 @@ repositories {
 }
 
 dependencies {
-	compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-web")
 	compile("org.springframework.boot:spring-boot-starter-data-jpa")
 	compile("com.h2database:h2")
 	compile("org.jetbrains.kotlin:kotlin-stdlib")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
+
+  compile("io.springfox:springfox-swagger2:2.7.0")
+  compile("io.springfox:springfox-swagger-ui:2.7.0")
+
 	testCompile("org.springframework.boot:spring-boot-starter-test") {
 		exclude(module = "junit")
 	}

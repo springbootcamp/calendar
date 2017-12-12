@@ -1,2 +1,7 @@
 server:
   port: 10101
+
+context:
+  initializer:
+    classes: org.springbootcamp.calendar.BeansInitializer
+
